@@ -1,7 +1,11 @@
 <template>
+  <h2>Catalog</h2>
   <div class="v-catalog">
-    <p>Catalog</p>
-    <vCatalogItem />
+    <vCatalogItem
+      v-for="item in items_data"
+      :key="item.article"
+      :item="item"
+    />
   </div>
 </template>
 
@@ -13,7 +17,20 @@ export default {
   components: {
     vCatalogItem,
   },
+  props: {
+    items_data: {
+      type: Array,
+      default: () => [],
+    },
+  },
 };
 </script>
 
-<style></style>
+<style scoped>
+.v-catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+</style>
