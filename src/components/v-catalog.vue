@@ -2,7 +2,7 @@
   <h2>Catalog</h2>
   <div class="v-catalog">
     <vCatalogItem
-      v-for="item in items_data"
+      v-for="item in PRODUCTS"
       :key="item.article"
       :item="item"
     />
@@ -11,17 +11,21 @@
 
 <script>
 import vCatalogItem from './v-catalog-item.vue';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'v-catalog',
   components: {
     vCatalogItem,
   },
-  props: {
-    items_data: {
-      type: Array,
-      default: () => [],
-    },
+  methods: {
+    ...mapActions(['GET_PRODUCT_FROM_API']),
+  },
+  computed: {
+    ...mapGetters(['PRODUCTS']),
+  },
+  mounted() {
+    this.GET_PRODUCT_FROM_API();
   },
 };
 </script>
@@ -30,7 +34,7 @@ export default {
 .v-catalog {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 </style>

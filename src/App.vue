@@ -1,7 +1,7 @@
 <template>
   <h1>Hello World!</h1>
   <vMainWrapper />
-  <vCatalog :items_data="items_data" />
+  <vCatalog />
   <vCart />
 </template>
 
@@ -9,7 +9,6 @@
 import vMainWrapper from './components/v-main-wrapper.vue';
 import vCatalog from './components/v-catalog.vue';
 import vCart from './components/v-cart.vue';
-import Data from '../db.json';
 
 export default {
   name: 'App',
@@ -17,11 +16,6 @@ export default {
     vMainWrapper,
     vCatalog,
     vCart,
-  },
-  data() {
-    return {
-      items_data: Data,
-    };
   },
 };
 </script>
