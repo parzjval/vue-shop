@@ -1,11 +1,14 @@
 <template>
-  <h2>Catalog</h2>
-  <div class="v-catalog">
-    <vCatalogItem
-      v-for="item in PRODUCTS"
-      :key="item.article"
-      :item="item"
-    />
+  <div>
+    <h2>Catalog</h2>
+    <div class="v-catalog">
+      <vCatalogItem
+        v-for="item in PRODUCTS"
+        :key="item.article"
+        :product_data="item"
+        @addToCart="addToCart"
+      />
+    </div>
   </div>
 </template>
 
@@ -19,7 +22,10 @@ export default {
     vCatalogItem,
   },
   methods: {
-    ...mapActions(['GET_PRODUCT_FROM_API']),
+    ...mapActions(['GET_PRODUCT_FROM_API', 'ADD_TO_CART']),
+    addToCart(data) {
+      this.ADD_TO_CART(data);
+    },
   },
   computed: {
     ...mapGetters(['PRODUCTS']),

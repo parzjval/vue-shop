@@ -1,21 +1,23 @@
 <template>
-  <h1>Hello World!</h1>
-  <vMainWrapper />
-  <vCatalog />
-  <vCart />
+  <div>
+    <h1>Hello World!</h1>
+    <vMainWrapper />
+    <!-- <vCatalog />
+  <vCart /> -->
+  </div>
 </template>
 
 <script>
 import vMainWrapper from './components/v-main-wrapper.vue';
-import vCatalog from './components/v-catalog.vue';
-import vCart from './components/v-cart.vue';
+// import vCatalog from './components/v-catalog.vue';
+// import vCart from './components/v-cart.vue';
 
 export default {
   name: 'App',
   components: {
     vMainWrapper,
-    vCatalog,
-    vCart,
+    // vCatalog,
+    // vCart,
   },
 };
 </script>
