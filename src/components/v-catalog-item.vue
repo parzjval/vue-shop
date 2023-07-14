@@ -1,14 +1,14 @@
 <template>
   <div class="v-catalog-item">
     <img
-      :src="require('../assets/images/' + product_data.image)"
+      :src="require('../assets/images/' + product.image)"
       alt="Product picture"
       class="img"
     />
     <p>
-      <strong> {{ product_data.name }} </strong>
+      <strong> {{ product.name }} </strong>
     </p>
-    <p>{{ product_data.price }} р.</p>
+    <p>{{ product.price }} р.</p>
     <button
       class="btn"
       @click="addToCart"
@@ -29,10 +29,18 @@ export default {
       },
     },
   },
+  data() {
+    return {
+      product: this.product_data,
+    };
+  },
   methods: {
     addToCart() {
-      this.$emit('addToCart', this.product_data);
+      this.$emit('addToCart', this.product);
     },
+  },
+  mounted() {
+    this.product['quantity'] = 1;
   },
 };
 </script>

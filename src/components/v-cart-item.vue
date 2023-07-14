@@ -39,11 +39,7 @@ export default {
       this.$emit('deleteFromCart');
     },
   },
-  mounted() {
-    // this.$set(this.cart_item_data, 'quantity', 1);
-    this.cart_item['quantity'] = 1;
-    // Vue.set(this.cart_item_data, 'quantity', 1);
-  },
+  // mounted() {},
 };
 </script>
 

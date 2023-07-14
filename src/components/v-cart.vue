@@ -1,31 +1,32 @@
 <template>
+  <h1>Cart</h1>
   <div class="v-cart">
-    <h1>Cart</h1>
-    <v-cart-item
-      v-for="(item, index) in cart_data"
-      :key="item.article"
-      :cart_item_data="item"
-      @deleteFromCart="deleteFromCart(index)"
-    />
+    <p v-if="!CART.length">There is a no more product's in cart</p>
+    <p>
+      <router-link :to="{ name: 'catalog' }">
+        <div class="v-cart__link_to_catalog">Back to catalog</div>
+      </router-link>
+      <v-cart-item
+        v-for="(item, index) in CART"
+        :key="item.article"
+        :cart_item_data="item"
+        @deleteFromCart="deleteFromCart(index)"
+      />
+    </p>
   </div>
 </template>
 
 <script>
 import vCartItem from './v-cart-item.vue';
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'v-cart',
   components: {
     vCartItem,
   },
-  props: {
-    cart_data: {
-      type: Object,
-      default() {
-        return {};
-      },
-    },
+  computed: {
+    ...mapGetters(['CART']),
   },
   methods: {
     ...mapActions(['DELETE_FROM_CART']),
@@ -37,12 +38,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-//TODO варавнивание по центру и паддинги
 .v-cart {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // align-items: center;
   width: 90%;
 }
 </style>
