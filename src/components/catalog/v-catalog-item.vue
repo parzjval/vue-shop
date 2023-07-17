@@ -1,7 +1,7 @@
 <template>
   <div class="v-catalog-item">
     <img
-      :src="require('../assets/images/' + product.image)"
+      :src="require('../../assets/images/' + product.image)"
       alt="Product picture"
       class="img"
     />
