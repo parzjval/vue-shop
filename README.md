@@ -1,21 +1,18 @@
-# shop
+# Shop
 
-## Project setup
+Vue3, Vuex,Vue-router, Sass, Axious 
+
+## 1. Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 2. Compiles and hot-reloads for development
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 3. Run Database 
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+ json-server --watch db.json                               
 ```
