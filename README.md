@@ -1,18 +1,26 @@
 # Shop
 
-Vue3, Vuex,Vue-router, Sass, Axious 
+Stack:
+– Vue3  
+ – Vuex
+– Vue-router
+– Scss
+– Axios
 
 ## 1. Project setup
+
 ```
 npm install
 ```
 
 ### 2. Compiles and hot-reloads for development
+
 ```
 npm run serve
 ```
 
-### 3. Run Database 
+### 3. Run Database
+
 ```
- json-server --watch db.json                               
+ json-server --watch db.json
 ```
