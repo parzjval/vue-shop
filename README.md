@@ -1,13 +1,13 @@
 # Shop
 
-Stack:
-– Vue3  
- – Vuex
-– Vue-router
-– Scss
-– Axios
+### Stack
++ Vue3
++ Vuex
++ Vue-router
++ Scss
++ Axios
 
-## 1. Project setup
+### 1. Project setup
 
 ```
 npm install
