@@ -1,7 +1,7 @@
 # Shop
 
 ### Stack
-+ Vue3
++ Vue
 + Vuex
 + Vue-router
 + Scss
