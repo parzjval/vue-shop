@@ -24,3 +24,12 @@ npm run serve
 ```
  json-server --watch db.json
 ```
+
+
+## Интерфейс
+
+### Каталог товаров 
+![Каталог товаров](https://github.com/parzjval/vue-shop/blob/main/public/Каталог%20товаров.png)
+
+### Корзина 
+![Корзина](https://github.com/parzjval/vue-shop/blob/main/public/Корзина.png)
